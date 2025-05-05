@@ -9,3 +9,4 @@ services:
       - IMMEDIATE_RUN=${IMMEDIATE_RUN}
       - CRON_SCHEDULE=${CRON_SCHEDULE}
       - ZONES_ARRAY=${ZONES_ARRAY}
+      - DELAY=${DELAY}
