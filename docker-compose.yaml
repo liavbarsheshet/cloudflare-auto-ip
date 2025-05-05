@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+      - IMMEDIATE_RUN=${IMMEDIATE_RUN}
+      - CRON_SCHEDULE=${CRON_SCHEDULE}
+      - ZONES_ARRAY=${ZONES_ARRAY}
