@@ -51,6 +51,7 @@ export class CloudflareAPI {
   async updateARecord(zoneId: string, record: TRecord, newIp: string): Promise<void> {
     const body = {
       type: "A",
+      name: record.name,
       content: newIp,
       ttl: record.ttl ?? 1,
       proxied: record.proxied,
@@ -64,7 +65,7 @@ export class CloudflareAPI {
 
     const data = await res.json();
 
-    if (!data.success) throw new Error(`Failed to update A record '${name}': ${JSON.stringify(data.errors)}`);
+    if (!data.success) throw new Error(`Failed to update A record '${record.name}': ${JSON.stringify(data.errors)}`);
   }
 }
 
