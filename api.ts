@@ -51,7 +51,6 @@ export class CloudflareAPI {
   async updateARecord(zoneId: string, record: TRecord, newIp: string): Promise<void> {
     const body = {
       type: "A",
-      name,
       content: newIp,
       ttl: record.ttl ?? 1,
       proxied: record.proxied,
